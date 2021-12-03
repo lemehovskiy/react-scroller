@@ -3,7 +3,7 @@ import Debug from './Debug';
 import useScroller from './hooks/useScroller';
 
 interface SvgBorderProps {
-  children: any;
+  children(props: { scrollProgress?: number }): JSX.Element;
   scrollTriggerOffset?: {
     start: number | string;
     end: number | string;
