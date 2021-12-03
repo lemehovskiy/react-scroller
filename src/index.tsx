@@ -34,8 +34,8 @@ const Scroller = function ({
   });
 
   return (
-    <div ref={ref}>
-      {children({ scrollProgress })}
+    <>
+      {React.cloneElement(children({ scrollProgress }), { ref })}
       {debug && (
         <Debug
           triggerStartPosition={
@@ -47,7 +47,7 @@ const Scroller = function ({
           scrollProgress={scrollProgress}
         />
       )}
-    </div>
+    </>
   );
 };
 
