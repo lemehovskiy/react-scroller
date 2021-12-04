@@ -3,16 +3,6 @@ import useEventListener from './useEventListener';
 import calculateResize from '../utils/calculateResize';
 import calculateScroll from '../utils/calculateScroll';
 import calculateProgressLength from '../utils/calculateProgressLength';
-import generateTestCase from '../utils/generateTestCase';
-
-interface Props {
-  scrollTriggerOffset?: {
-    start: number | string;
-    end: number | string;
-  };
-  ref: any;
-  autoAdjustScrollOffset?: boolean;
-}
 
 type WindowSize = [windowWidth: number, windowHeight: number];
 
