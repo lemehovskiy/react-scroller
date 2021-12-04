@@ -18,12 +18,10 @@
 ## Demo <a name="demo"></a>
 
 [Basic Scroller](https://codesandbox.io/s/lemehovskiy-react-scroller-simple-demo-e3c8d?file=/src/App.tsx)
-
 [Basic useScroller](https://codesandbox.io/s/lemehovskiy-react-scroller-basic-usescroller-demo-qtj00?file=/src/App.tsx)
-
-[Basic parallax effect](https://codesandbox.io/s/lemehovskiy-react-scroller-basic-parallax-lncoe?file=/src/App.tsx)
-
-[Gsap(Greensock) parallax effect](https://codesandbox.io/s/lemehovskiy-react-scroller-gsap-parallax-yw4cx?file=/src/App.tsx)
+[Basic parallax background effect](https://codesandbox.io/s/lemehovskiy-react-scroller-basic-parallax-lncoe?file=/src/App.tsx)
+[Gsap(Greensock) parallax background effect](https://codesandbox.io/s/lemehovskiy-react-scroller-gsap-parallax-yw4cx?file=/src/App.tsx)
+[Gsap(Greensock) timeline](https://codesandbox.io/s/lemehovskiy-react-scroller-gsap-greensock-timeline-5jzs2)
 
 ## 🧐 About <a name = "about"></a>
 
