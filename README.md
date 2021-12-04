@@ -13,7 +13,6 @@
 
 <p align="center">
     React component for detecting vertical scroll progress.
-    <br> 
 </p>
 
 ## Demo <a name="demo"></a>
@@ -21,6 +20,10 @@
 [Basic Scroller](https://codesandbox.io/s/lemehovskiy-react-scroller-simple-demo-e3c8d?file=/src/App.tsx)
 
 [Basic useScroller](https://codesandbox.io/s/lemehovskiy-react-scroller-basic-usescroller-demo-qtj00?file=/src/App.tsx)
+
+[Basic parallax effect](https://codesandbox.io/s/lemehovskiy-react-scroller-basic-parallax-lncoe?file=/src/App.tsx)
+
+[Gsap(Greensock) parallax effect](https://codesandbox.io/s/lemehovskiy-react-scroller-gsap-parallax-yw4cx?file=/src/App.tsx)
 
 ## 🧐 About <a name = "about"></a>
 
