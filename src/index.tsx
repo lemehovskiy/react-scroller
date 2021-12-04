@@ -52,3 +52,5 @@ const Scroller = function ({
 };
 
 export default Scroller;
+
+export { useScroller };
