@@ -1,6 +1,6 @@
 {
   "name": "@lemehovskiy/react-scroller",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "React component for detecting vertical scroll progress",
   "homepage": "https://github.com/lemehovskiy/react-scroller#readme",
   "keywords": [
@@ -31,9 +31,9 @@
     ]
   },
   "publishConfig": {
-  "access": "public",
-  "registry": "https://registry.npmjs.org/"
-},
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "dependencies": {
     "react-jss": "^10.8.2"
   },
