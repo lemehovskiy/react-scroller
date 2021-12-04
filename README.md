@@ -18,7 +18,9 @@
 
 ## Demo <a name="demo"></a>
 
-[Simple](https://codesandbox.io/s/lemehovskiy-react-scroller-simple-demo-e3c8d?file=/src/App.tsx)
+[Basic Scroller](https://codesandbox.io/s/lemehovskiy-react-scroller-simple-demo-e3c8d?file=/src/App.tsx)
+
+[Basic useScroller](https://codesandbox.io/s/lemehovskiy-react-scroller-basic-usescroller-demo-qtj00?file=/src/App.tsx)
 
 ## 🧐 About <a name = "about"></a>
 
@@ -32,12 +34,12 @@ React component for detecting vertical scroll progress.
 npm i @lemehovskiy/react-scroller
 ```
 
-### Example
+### Scroller example
 
 App.tsx
 
 ```js
-import Scroller from "react-scroller/dist";
+import Scroller from "@lemehovskiy/react-scroller/dist";
 
 export default function App() {
   return (
@@ -56,11 +58,49 @@ export default function App() {
 }
 ```
 
+### useScroller hook example
+
+App.tsx
+
+```js
+import { useRef } from "react";
+import { useScroller } from "@lemehovskiy/react-scroller/dist";
+
+export default function App() {
+  const ref = useRef<HTMLDivElement>(null);
+
+  const { scrollProgress } = useScroller({
+    ref
+  });
+
+  return (
+    <>
+      <div style={{ height: "100vh", background: "lightgreen" }}></div>
+
+      <div ref={ref} style={{ height: "200px", background: "lightblue" }}>
+        {scrollProgress}
+      </div>
+
+      <div style={{ height: "100vh", background: "lightgreen" }}></div>
+    </>
+  );
+}
+
+```
+
 ## Scroller API
+
+| name                   | description                                   | type                                                          | default |
+| ---------------------- | --------------------------------------------- | ------------------------------------------------------------- | ------- |
+| children               |                                               | children: (props: { scrollProgress?: number }) => JSX.Element |         |
+| debug                  | Debug flag property                           | boolean                                                       | false   |
+| scrollTriggerOffset    | See useScroller hook API below for more details |
+| autoAdjustScrollOffset    | See useScroller hook API below for more details |
+
+## useScroller hook API
 
 | name                   | description                                                                                                                                                                                                                                                                                     | type                                                          | default            |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ------------------ |
-| children               |                                                                                                                                                                                                                                                                                                 | children: (props: { scrollProgress?: number }) => JSX.Element |                    |
+| ref               |                                                                                                                                                                                                                                                                                                 |  |                    |
 | scrollTriggerOffset    | Offset for scroll trigger position. By default, the scroll trigger "start" is placed at the bottom and the trigger "end" at the top. If you want to reduce start offset by 100px you can pass {start: -100, end: 0} or move start offset to the middle of  the viewport {start: '-50%', end: 0} | {start: number &#124; string, end: number &#124; string }     | {start: 0, end: 0} |
-| debug                  | Debug flag property                                                                                                                                                                                                                                                                             | boolean                                                       | false              |
 | autoAdjustScrollOffset | Auto-adjusting start and end offset. This option is helpful if the element is first or last and you can't realize the full progress range. You can manually adjust triggers offset but in this case, you can lose responsive behavior.                                                          | boolean                                                       | false              |
