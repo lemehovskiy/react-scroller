@@ -1,21 +1,25 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 const useEventListener = (
   target: any,
   type: string,
-  listener: (e: any) => any,
-  ...options: any
+  listener: (e: any) => any
 ) => {
+  const listenerRef = useRef(listener);
+  listenerRef.current = listener;
+
+  const wrappedListener: typeof listenerRef.current = (evt) =>
+    listenerRef.current.call(target, evt);
+
   useEffect(() => {
     const targetIsRef = Object.prototype.hasOwnProperty.call(target, 'current');
     const currentTarget = targetIsRef ? target.current : target;
-    if (currentTarget)
-      currentTarget.addEventListener(type, listener, ...options);
+    currentTarget.addEventListener(type, wrappedListener);
     return () => {
-      if (currentTarget)
-        currentTarget.removeEventListener(type, listener, ...options);
+      currentTarget.removeEventListener(type, wrappedListener);
     };
-  }, [target, type, listener, options]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [target, type]);
 };
 
 export default useEventListener;
