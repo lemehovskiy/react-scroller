@@ -1,20 +1,12 @@
 import { useEffect, useState } from 'react';
+import {
+  getProgress,
+  getScrollTop,
+  getWindowHeight,
+  getResizeValues,
+  getBodyHeight,
+} from '@lemehovskiy/scroller-utils/dist';
 import useEventListener from './useEventListener';
-import calculateResize from '../utils/calculateResize';
-import calculateScroll from '../utils/calculateScroll';
-import calculateProgressLength from '../utils/calculateProgressLength';
-
-type WindowSize = [windowWidth: number, windowHeight: number];
-
-const getScrollTop = (): number =>
-  document.body.scrollTop || document.documentElement.scrollTop;
-
-const getWindowSize = (): WindowSize => [window.innerWidth, window.innerHeight];
-
-const getBodySize = () => [
-  document.body.clientWidth,
-  document.body.clientHeight,
-];
 
 interface Props {
   scrollTriggerOffset?: {
@@ -51,44 +43,38 @@ const useScroller = ({
     const scrollTop = getScrollTop();
     const { y: elementViewportOffsetTop, height: elementHeight } =
       ref.current.getBoundingClientRect();
-    const windowSize = getWindowSize();
-    const [, bodyHeight] = getBodySize();
+    const windowHeight = getWindowHeight();
+    const bodyHeight = getBodyHeight();
 
     const {
       elementTriggerOffsetTop: newElementTriggerOffsetTop,
       elementTriggerOffsetBottom: newElementTriggerOffsetBottom,
-      scrollTriggerStartOffsetPx: newScrollTriggerOffsetPxStart,
-      scrollTriggerEndOffsetPx: newScrollTriggerOffsetPxEnd,
-    } = calculateResize(
-      scrollTriggerOffset,
+      progressLength,
+      scrollTriggerOffsetStart: newScrollTriggerOffsetPxStart,
+      scrollTriggerOffsetEnd: newScrollTriggerOffsetPxEnd,
+    } = getResizeValues(
       scrollTop,
+      windowHeight,
+      bodyHeight,
       elementViewportOffsetTop,
       elementHeight,
-      windowSize,
-      { height: bodyHeight },
+      scrollTriggerOffset,
       autoAdjustScrollOffset
-    );
-
-    const progressLenght = calculateProgressLength(
-      elementHeight,
-      windowSize[1],
-      newScrollTriggerOffsetPxStart,
-      newScrollTriggerOffsetPxEnd
     );
 
     setElementTriggerOffsetTop(newElementTriggerOffsetTop);
     setElementTriggerOffsetBottom(newElementTriggerOffsetBottom);
     setScrollTriggerOffsetPxStart(newScrollTriggerOffsetPxStart);
     setScrollTriggerOffsetPxEnd(newScrollTriggerOffsetPxEnd);
-    setScrollLength(progressLenght);
+    setScrollLength(progressLength);
   };
 
   const handleScroll = () => {
     const scrollTop = getScrollTop();
-    const [, windowHeight] = getWindowSize();
-    const progress = calculateScroll(
+    const windowHeight = getWindowHeight();
+    const progress = getProgress(
       scrollTop,
-      { height: windowHeight },
+      windowHeight,
       scrollTriggerOffsetPxStart,
       elementTriggerOffsetTop,
       scrollLength
