@@ -20,7 +20,8 @@
     "fix": "npm run fix:prettier && npm run fix:eslint",
     "fix:eslint": "eslint src/ --ext .ts,.tsx --fix --max-warnings=0",
     "fix:prettier": "prettier 'src/**/*.{ts,tsx}' --write",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "typedoc": "typedoc --out docs src/index.tsx"
   },
   "author": "lemehovskiy",
   "license": "MIT",
@@ -36,7 +37,8 @@
   },
   "dependencies": {
     "@lemehovskiy/scroller-utils": "^0.0.12",
-    "react-jss": "^10.8.2"
+    "react-jss": "^10.8.2",
+    "typedoc": "^0.22.11"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.16.0",

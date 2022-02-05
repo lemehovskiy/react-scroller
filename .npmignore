@@ -3,6 +3,7 @@ webpack.config.js
 webpack.config.d.ts
 tsconfig.json
 /src
+/docs
 .git
 .github
 .husky

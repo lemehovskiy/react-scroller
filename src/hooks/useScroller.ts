@@ -8,7 +8,7 @@ import {
 } from '@lemehovskiy/scroller-utils/dist';
 import useEventListener from './useEventListener';
 
-interface Props {
+export interface UseScrollerProps {
   scrollTriggerOffset?: {
     start: number | string;
     end: number | string;
@@ -25,7 +25,7 @@ const useScroller = ({
   autoAdjustScrollOffset = false,
 
   ref,
-}: Props) => {
+}: UseScrollerProps) => {
   const [elementTriggerOffsetTop, setElementTriggerOffsetTop] = useState(0);
 
   const [elementTriggerOffsetBottom, setElementTriggerOffsetBottom] =
