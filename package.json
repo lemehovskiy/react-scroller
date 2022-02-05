@@ -35,6 +35,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
+    "@lemehovskiy/scroller-utils": "^0.0.12",
     "react-jss": "^10.8.2"
   },
   "devDependencies": {
