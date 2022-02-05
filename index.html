@@ -1,0 +1,124 @@
+<!DOCTYPE html><html class="default"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>@lemehovskiy/react-scroller</title><meta name="description" content="Documentation for @lemehovskiy/react-scroller"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script></head><body><script>document.body.classList.add(localStorage.getItem("tsd-theme") || "os")</script><header><div class="tsd-page-toolbar"><div class="container"><div class="table-wrap"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget search no-caption">Search</label><input type="text" id="tsd-search-field"/></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">@lemehovskiy/react-scroller</a></div><div class="table-cell" id="tsd-widgets"><div id="tsd-filter"><a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a><div class="tsd-filter-group"><div class="tsd-select" id="tsd-filter-visibility"><span class="tsd-select-label">All</span><ul class="tsd-select-list"><li data-value="public">Public</li><li data-value="protected">Public/Protected</li><li data-value="private" class="selected">All</li></ul></div> <input type="checkbox" id="tsd-filter-inherited" checked/><label class="tsd-widget" for="tsd-filter-inherited">Inherited</label><input type="checkbox" id="tsd-filter-externals" checked/><label class="tsd-widget" for="tsd-filter-externals">Externals</label></div></div><a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a></div></div></div></div><div class="tsd-page-title"><div class="container"><h1>@lemehovskiy/react-scroller</h1></div></div></header><div class="container container-main"><div class="row"><div class="col-8 col-content"><div class="tsd-panel tsd-typography"><h3 align="center">react-scroller</h3>
+
+<div align="center">
+
+<p><a href=""><img src="https://img.shields.io/badge/status-active-success.svg" alt="Status"></a>
+<a href="https://github.com/lemehovskiy/react-scroller/issues"><img src="https://img.shields.io/github/issues/lemehovskiy/react-scroller.svg" alt="GitHub Issues"></a>
+<a href="https://github.com/lemehovskiy/react-scroller/pulls"><img src="https://img.shields.io/github/issues-pr/lemehovskiy/react-scroller.svg" alt="GitHub Pull Requests"></a>
+<a href="/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a></p>
+</div>
+
+<hr>
+<p align="center">
+    React component for detecting vertical scroll progress.
+</p>
+
+
+<a href="#demo-" id="demo-" style="color: inherit; text-decoration: none;">
+  <h2>Demo <a name="demo"></a></h2>
+</a>
+<p><a href="https://codesandbox.io/s/lemehovskiy-react-scroller-simple-demo-e3c8d?file=/src/App.tsx">Basic Scroller</a></p>
+<p><a href="https://codesandbox.io/s/lemehovskiy-react-scroller-basic-usescroller-demo-qtj00?file=/src/App.tsx">Basic useScroller</a></p>
+<p><a href="https://codesandbox.io/s/lemehovskiy-react-scroller-basic-parallax-lncoe?file=/src/App.tsx">Basic parallax background effect</a></p>
+<p><a href="https://codesandbox.io/s/lemehovskiy-react-scroller-gsap-parallax-yw4cx?file=/src/App.tsx">Gsap(Greensock) parallax background effect</a></p>
+<p><a href="https://codesandbox.io/s/lemehovskiy-react-scroller-gsap-greensock-timeline-5jzs2">Gsap(Greensock) timeline</a></p>
+
+<a href="#🧐-about-" id="🧐-about-" style="color: inherit; text-decoration: none;">
+  <h2>🧐 About <a name = "about"></a></h2>
+</a>
+<p>React component for detecting vertical scroll progress.</p>
+
+<a href="#🏁-getting-started-" id="🏁-getting-started-" style="color: inherit; text-decoration: none;">
+  <h2>🏁 Getting Started <a name = "getting_started"></a></h2>
+</a>
+
+<a href="#installing" id="installing" style="color: inherit; text-decoration: none;">
+  <h3>Installing</h3>
+</a>
+<pre><code><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-0">i</span><span class="hl-1"> @</span><span class="hl-0">lemehovskiy</span><span class="hl-1">/</span><span class="hl-0">react</span><span class="hl-1">-</span><span class="hl-0">scroller</span>
+</code></pre>
+
+<a href="#scroller-example" id="scroller-example" style="color: inherit; text-decoration: none;">
+  <h3>Scroller example</h3>
+</a>
+<p>App.tsx</p>
+<pre><code class="language-js"><span class="hl-2">import</span><span class="hl-1"> </span><span class="hl-0">Scroller</span><span class="hl-1"> </span><span class="hl-2">from</span><span class="hl-1"> </span><span class="hl-3">&quot;@lemehovskiy/react-scroller/dist&quot;</span><span class="hl-1">;</span><br/><br/><span class="hl-2">export</span><span class="hl-1"> </span><span class="hl-2">default</span><span class="hl-1"> </span><span class="hl-4">function</span><span class="hl-1"> </span><span class="hl-5">App</span><span class="hl-1">() {</span><br/><span class="hl-1">  </span><span class="hl-2">return</span><span class="hl-1"> (</span><br/><span class="hl-1">    </span><span class="hl-6">&lt;&gt;</span><br/><span class="hl-1">      </span><span class="hl-6">&lt;</span><span class="hl-7">div</span><span class="hl-1"> </span><span class="hl-8">style</span><span class="hl-1">=</span><span class="hl-4">{</span><span class="hl-9">{ </span><span class="hl-0">height:</span><span class="hl-9"> </span><span class="hl-3">&quot;100vh&quot;</span><span class="hl-9">, </span><span class="hl-0">background:</span><span class="hl-9"> </span><span class="hl-3">&quot;lightgreen&quot;</span><span class="hl-9"> }</span><span class="hl-4">}</span><span class="hl-6">&gt;&lt;/</span><span class="hl-7">div</span><span class="hl-6">&gt;</span><br/><span class="hl-1">      </span><span class="hl-6">&lt;</span><span class="hl-10">Scroller</span><span class="hl-6">&gt;</span><br/><span class="hl-1">        </span><span class="hl-4">{</span><span class="hl-9">({ </span><span class="hl-0">scrollProgress</span><span class="hl-9"> }) </span><span class="hl-4">=&gt;</span><span class="hl-9"> (</span><br/><span class="hl-9">          </span><span class="hl-6">&lt;</span><span class="hl-7">div</span><span class="hl-9"> </span><span class="hl-8">style</span><span class="hl-1">=</span><span class="hl-4">{</span><span class="hl-9">{ </span><span class="hl-0">height:</span><span class="hl-9"> </span><span class="hl-3">&quot;200px&quot;</span><span class="hl-9">, </span><span class="hl-0">background:</span><span class="hl-9"> </span><span class="hl-3">&quot;lightblue&quot;</span><span class="hl-9"> }</span><span class="hl-4">}</span><span class="hl-6">&gt;</span><br/><span class="hl-9">            </span><span class="hl-4">{</span><span class="hl-0">scrollProgress</span><span class="hl-4">}</span><br/><span class="hl-9">          </span><span class="hl-6">&lt;/</span><span class="hl-7">div</span><span class="hl-6">&gt;</span><br/><span class="hl-9">        )</span><span class="hl-4">}</span><br/><span class="hl-1">      </span><span class="hl-6">&lt;/</span><span class="hl-10">Scroller</span><span class="hl-6">&gt;</span><br/><span class="hl-1">      </span><span class="hl-6">&lt;</span><span class="hl-7">div</span><span class="hl-1"> </span><span class="hl-8">style</span><span class="hl-1">=</span><span class="hl-4">{</span><span class="hl-9">{ </span><span class="hl-0">height:</span><span class="hl-9"> </span><span class="hl-3">&quot;100vh&quot;</span><span class="hl-9">, </span><span class="hl-0">background:</span><span class="hl-9"> </span><span class="hl-3">&quot;lightgreen&quot;</span><span class="hl-9"> }</span><span class="hl-4">}</span><span class="hl-6">&gt;&lt;/</span><span class="hl-7">div</span><span class="hl-6">&gt;</span><br/><span class="hl-1">    </span><span class="hl-6">&lt;/&gt;</span><br/><span class="hl-1">  );</span><br/><span class="hl-1">}</span>
+</code></pre>
+
+<a href="#usescroller-hook-example" id="usescroller-hook-example" style="color: inherit; text-decoration: none;">
+  <h3>useScroller hook example</h3>
+</a>
+<p>App.tsx</p>
+<pre><code class="language-js"><span class="hl-2">import</span><span class="hl-1"> { </span><span class="hl-0">useRef</span><span class="hl-1"> } </span><span class="hl-2">from</span><span class="hl-1"> </span><span class="hl-3">&quot;react&quot;</span><span class="hl-1">;</span><br/><span class="hl-2">import</span><span class="hl-1"> { </span><span class="hl-0">useScroller</span><span class="hl-1"> } </span><span class="hl-2">from</span><span class="hl-1"> </span><span class="hl-3">&quot;@lemehovskiy/react-scroller/dist&quot;</span><span class="hl-1">;</span><br/><br/><span class="hl-2">export</span><span class="hl-1"> </span><span class="hl-2">default</span><span class="hl-1"> </span><span class="hl-4">function</span><span class="hl-1"> </span><span class="hl-5">App</span><span class="hl-1">() {</span><br/><span class="hl-1">  </span><span class="hl-4">const</span><span class="hl-1"> </span><span class="hl-11">ref</span><span class="hl-1"> = </span><span class="hl-5">useRef</span><span class="hl-1">&lt;</span><span class="hl-10">HTMLDivElement</span><span class="hl-1">&gt;(</span><span class="hl-4">null</span><span class="hl-1">);</span><br/><br/><span class="hl-1">  </span><span class="hl-4">const</span><span class="hl-1"> { </span><span class="hl-11">scrollProgress</span><span class="hl-1"> } = </span><span class="hl-5">useScroller</span><span class="hl-1">({</span><br/><span class="hl-1">    </span><span class="hl-0">ref</span><br/><span class="hl-1">  });</span><br/><br/><span class="hl-1">  </span><span class="hl-2">return</span><span class="hl-1"> (</span><br/><span class="hl-1">    </span><span class="hl-6">&lt;&gt;</span><br/><span class="hl-1">      </span><span class="hl-6">&lt;</span><span class="hl-7">div</span><span class="hl-1"> </span><span class="hl-8">style</span><span class="hl-1">=</span><span class="hl-4">{</span><span class="hl-9">{ </span><span class="hl-0">height:</span><span class="hl-9"> </span><span class="hl-3">&quot;100vh&quot;</span><span class="hl-9">, </span><span class="hl-0">background:</span><span class="hl-9"> </span><span class="hl-3">&quot;lightgreen&quot;</span><span class="hl-9"> }</span><span class="hl-4">}</span><span class="hl-6">&gt;&lt;/</span><span class="hl-7">div</span><span class="hl-6">&gt;</span><br/><br/><span class="hl-1">      </span><span class="hl-6">&lt;</span><span class="hl-7">div</span><span class="hl-1"> </span><span class="hl-8">ref</span><span class="hl-1">=</span><span class="hl-4">{</span><span class="hl-0">ref</span><span class="hl-4">}</span><span class="hl-1"> </span><span class="hl-8">style</span><span class="hl-1">=</span><span class="hl-4">{</span><span class="hl-9">{ </span><span class="hl-0">height:</span><span class="hl-9"> </span><span class="hl-3">&quot;200px&quot;</span><span class="hl-9">, </span><span class="hl-0">background:</span><span class="hl-9"> </span><span class="hl-3">&quot;lightblue&quot;</span><span class="hl-9"> }</span><span class="hl-4">}</span><span class="hl-6">&gt;</span><br/><span class="hl-1">        </span><span class="hl-4">{</span><span class="hl-0">scrollProgress</span><span class="hl-4">}</span><br/><span class="hl-1">      </span><span class="hl-6">&lt;/</span><span class="hl-7">div</span><span class="hl-6">&gt;</span><br/><br/><span class="hl-1">      </span><span class="hl-6">&lt;</span><span class="hl-7">div</span><span class="hl-1"> </span><span class="hl-8">style</span><span class="hl-1">=</span><span class="hl-4">{</span><span class="hl-9">{ </span><span class="hl-0">height:</span><span class="hl-9"> </span><span class="hl-3">&quot;100vh&quot;</span><span class="hl-9">, </span><span class="hl-0">background:</span><span class="hl-9"> </span><span class="hl-3">&quot;lightgreen&quot;</span><span class="hl-9"> }</span><span class="hl-4">}</span><span class="hl-6">&gt;&lt;/</span><span class="hl-7">div</span><span class="hl-6">&gt;</span><br/><span class="hl-1">    </span><span class="hl-6">&lt;/&gt;</span><br/><span class="hl-1">  );</span><br/><span class="hl-1">}</span><br/>
+</code></pre>
+
+<a href="#scroller-api" id="scroller-api" style="color: inherit; text-decoration: none;">
+  <h2>Scroller API</h2>
+</a>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>description</th>
+<th>type</th>
+<th>default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>children</td>
+<td></td>
+<td>children: (props: { scrollProgress?: number }) =&gt; JSX.Element</td>
+<td></td>
+</tr>
+<tr>
+<td>debug</td>
+<td>Debug flag property</td>
+<td>boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>scrollTriggerOffset</td>
+<td>See useScroller hook API below for more details</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>autoAdjustScrollOffset</td>
+<td>See useScroller hook API below for more details</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+
+<a href="#usescroller-hook-api" id="usescroller-hook-api" style="color: inherit; text-decoration: none;">
+  <h2>useScroller hook API</h2>
+</a>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>description</th>
+<th>type</th>
+<th>default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ref</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>scrollTriggerOffset</td>
+<td>Offset for scroll trigger position. By default, the scroll trigger &quot;start&quot; is placed at the bottom and the trigger &quot;end&quot; at the top. If you want to reduce start offset by 100px you can pass {start: -100, end: 0} or move start offset to the middle of  the viewport {start: &#39;-50%&#39;, end: 0}</td>
+<td>{start: number &#124; string, end: number &#124; string }</td>
+<td>{start: 0, end: 0}</td>
+</tr>
+<tr>
+<td>autoAdjustScrollOffset</td>
+<td>Auto-adjusting start and end offset. This option is helpful if the element is first or last and you can&#39;t realize the full progress range. You can manually adjust triggers offset but in this case, you can lose responsive behavior.</td>
+<td>boolean</td>
+<td>false</td>
+</tr>
+</tbody></table>
+</div></div><div class="col-4 col-menu menu-sticky-wrap menu-highlight"><nav class="tsd-navigation primary"><ul><li class="current"><a href="modules.html">Exports</a></li></ul></nav><nav class="tsd-navigation secondary menu-sticky"><ul><li class="tsd-kind-interface"><a href="interfaces/ScrollerProps.html" class="tsd-kind-icon">Scroller<wbr/>Props</a></li><li class="tsd-kind-function"><a href="modules.html#default" class="tsd-kind-icon">default</a></li><li class="tsd-kind-function"><a href="modules.html#useScroller" class="tsd-kind-icon">use<wbr/>Scroller</a></li></ul></nav></div></div></div><footer class="with-border-bottom"><div class="container"><h2>Legend</h2><div class="tsd-legend-group"><ul class="tsd-legend"><li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li><li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li></ul></div><h2>Settings</h2><p>Theme <select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></p></div></footer><div class="container tsd-generator"><p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div><div class="overlay"></div><script src="assets/main.js"></script></body></html>
