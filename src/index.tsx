@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import Debug from './Debug';
 import useScroller from './hooks/useScroller';
 
-interface SvgBorderProps {
+export interface ScrollerProps {
   children(props: { scrollProgress?: number }): JSX.Element;
   scrollTriggerOffset?: {
     start: number | string;
@@ -20,7 +20,7 @@ const Scroller = function ({
   },
   debug = false,
   autoAdjustScrollOffset = false,
-}: SvgBorderProps) {
+}: ScrollerProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   const {
