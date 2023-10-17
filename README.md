@@ -12,7 +12,7 @@
 ---
 
 <p align="center">
-    React component for detecting vertical scroll progress.
+    React component for precise vertical scroll progress detection.
 </p>
 
 ## Demo <a name="demo"></a>
@@ -27,15 +27,18 @@
 
 [Gsap(Greensock) timeline](https://codesandbox.io/s/lemehovskiy-react-scroller-gsap-greensock-timeline-5jzs2)
 
-## 🧐 About <a name = "about"></a>
+## 🧐 Features <a name = "features"></a>
 
-React component for detecting vertical scroll progress.
+- Vertical Scroll Progress Tracking: Easily monitor scroll progress in your React components for engaging user experiences.
+- Custom Start and End Offsets: Define precise scroll triggers for your components, enhancing user interactions.
+- Auto-Adjust Offsets: Ensure seamless tracking even in limited space scenarios, making your components responsive.
+- Debug Mode: Debug with ease using the built-in visualizer for triggers.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
 ### Installing
 
-```
+```sh
 npm i @lemehovskiy/react-scroller
 ```
 
@@ -107,5 +110,5 @@ export default function App() {
 | name                   | description                                                                                                                                                                                                                                                                                     | type                                                          | default            |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ------------------ |
 | ref               |                                                                                                                                                                                                                                                                                                 |  |                    |
-| scrollTriggerOffset    | Offset for scroll trigger position. By default, the scroll trigger "start" is placed at the bottom and the trigger "end" at the top. If you want to reduce start offset by 100px you can pass {start: -100, end: 0} or move start offset to the middle of  the viewport {start: '-50%', end: 0} | {start: number &#124; string, end: number &#124; string }     | {start: 0, end: 0} |
+| scrollTriggerOffset    | Offset for scroll trigger position. By default, the scroll trigger "start" is placed at the bottom, and the trigger "end" at the top. If you want to reduce the start offset by 100px you can pass {start: -100, end: 0} or move the start offset to the middle of the viewport {start: '-50%', end: 0} | {start: number &#124; string, end: number &#124; string }     | {start: 0, end: 0} |
 | autoAdjustScrollOffset | Auto-adjusting start and end offset. This option is helpful if the element is first or last and you can't realize the full progress range. You can manually adjust triggers offset but in this case, you can lose responsive behavior.                                                          | boolean                                                       | false              |

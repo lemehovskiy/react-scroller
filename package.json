@@ -1,13 +1,12 @@
 {
   "name": "@lemehovskiy/react-scroller",
-  "version": "0.0.10",
-  "description": "React component for detecting vertical scroll progress",
+  "version": "0.0.11",
+  "description": "React component for precise vertical scroll progress detection",
   "homepage": "https://github.com/lemehovskiy/react-scroller#readme",
   "keywords": [
     "react",
     "scroll",
-    "progress",
-    "detect"
+    "progress"
   ],
   "main": "dist/index.js",
   "scripts": {
