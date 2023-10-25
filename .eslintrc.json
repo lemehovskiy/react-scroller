@@ -29,6 +29,7 @@
         "react/jsx-props-no-spreading": 0,
         "react/require-default-props": 0,
         "no-eval": 0,
-        "func-names": 0
+        "func-names": 0,
+        "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
     }
 }
